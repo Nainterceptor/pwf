@@ -1,0 +1,13 @@
+[package]
+name = "pwf"
+description = "Panda web framework, not suitable for production."
+version = "0.1.0"
+authors = ["Panda <hello@panda.services>"]
+repository = "https://github.com/Nainterceptor/pwf"
+readme = "README.md"
+keywords = ["http", "framework"]
+license = "GPL-3.0"
+license-file = "LICENSE"
+
+[dependencies]
+hyper = "0.7"
