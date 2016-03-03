@@ -8,6 +8,7 @@ pub enum Criterion {
 	Domain(String),
 	ExactPath(String),
 	Method(hyperMethod),
+	PathStartWith(String),
 }
 
 pub fn check(criterion: &Criterion, request: &Request) -> bool {
@@ -16,6 +17,7 @@ pub fn check(criterion: &Criterion, request: &Request) -> bool {
 		Criterion::Domain(ref domain) => true,
 		Criterion::ExactPath(ref path) => request.uri.to_string().eq(path),
 		Criterion::Method(ref method) => request.method.eq(method),
+		Criterion::PathStartWith(ref path) => request.uri.to_string().starts_with(path),
 	}
 }
 
