@@ -16,7 +16,7 @@ impl Route {
 
 	pub fn new_with_method_path(handler: BoxedHandler, method: hyperMethod, path: String) -> Self {
         let mut route = Route::new(handler);
-        route.add_criterion(Criterion::Method(method));
+        route.add_criterion(Criterion::Method(vec![method]));
         route.add_criterion(Criterion::ExactPath(path));
         return route;
 	}
